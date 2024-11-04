@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+    <form method="POST">
+        <label for="square_footage">Square Footage:</label>
+        <input type="number" name="square_footage" required><br>
+
+        <label for="num_bedrooms">Number of Bedrooms:</label>
+        <input type="number" name="num_bedrooms" required><br>
+
+        <label for="num_bathrooms">Number of Bathrooms:</label>
+        <input type="number" name="num_bathrooms" required><br>
+
+        <label for="year_built">Year Built:</label>
+        <input type="number" name="year_built" required><br>
+
+        <label for="lot_size">Lot Size:</label>
+        <input type="number" step="any" name="lot_size" required><br>
+
+        <label for="garage_size">Garage Size:</label>
+        <input type="number" name="garage_size" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Predicted House Price: ${{ prediction | round(2) }}</h2>
+    {% endif %}
+</body>
+</html>
